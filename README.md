@@ -4,7 +4,7 @@ Base image for containerized browsers
 
 ## Usage
 
-    docker run -it -p 5900:5900 -v $(pwd):/data browser-base
+    docker run -it -p 5900:5900 -v $(pwd):/data martinsthiago/browser-base
 
 ## Content
 
