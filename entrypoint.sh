@@ -1,6 +1,6 @@
 #!/bin/bash
 
-RECORDED_FILE_NAME=${CUSTOM_RECORD_NAME:-`cat /etc/browser || 'record'`}
+RECORDED_FILE_NAME=${CUSTOM_RECORD_NAME:-`cat /etc/browser || echo 'record'`}
 
 Xvfb $DISPLAY -ac -screen 0 ${RESOLUTION}x24 >& /tmp/Xvfb.log &
 sleep 1 && fluxbox >& /tmp/fluxbox.log &
