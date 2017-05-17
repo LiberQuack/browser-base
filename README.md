@@ -21,6 +21,10 @@ Then you can run whatever command you want
 The recorded session can be found at `/data/record.mkv` (filename may
 vary for images extending this base)
 
+## Environment Variables
+
+- **CUSTOM_RECORD_NAME**: Customize video file name
+
 ## Troubleshoot?
 
 If you find yourself in trouble... It's possible to see logs in
