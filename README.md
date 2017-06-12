@@ -18,12 +18,15 @@ Base image for containerized browsers
 Video record starts automatically when container is spawned...
 Then you can run whatever command you want
 
-The recorded session can be found at `/data/record.mkv` (filename may
+The recorded session can be found at `/data/record.mp4` (filename may
 vary for images extending this base)
 
 ## Environment Variables
 
 - **CUSTOM_RECORD_NAME**: Customize video file name
+- **RESOLUTION**: 1366x768
+- **VIDEO_DIRECTORY**: /data
+- **VIDEO_EXTENSION**: mp4
 
 ## Troubleshoot?
 
