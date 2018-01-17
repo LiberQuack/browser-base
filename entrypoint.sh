@@ -3,7 +3,7 @@
 
 RECORDED_FILE_NAME=${CUSTOM_RECORD_NAME:-`cat /etc/browser || echo 'record'`}
 VIDEO_EXTENSION=${VIDEO_EXTENSION:-'mkv'}
-FRAME_RATE=${VIDEO_EXTENSION:-'30'}
+FRAME_RATE=${FRAME_RATE:-'30'}
 
 Xvfb $DISPLAY -ac -screen 0 ${RESOLUTION}x24 >& /tmp/Xvfb.log &
 sleep 1 && fluxbox >& /tmp/fluxbox.log &
