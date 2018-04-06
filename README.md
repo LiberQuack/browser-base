@@ -27,6 +27,8 @@ vary for images extending this base)
 - **RESOLUTION**: 1366x768
 - **VIDEO_DIRECTORY**: /data
 - **VIDEO_EXTENSION**: mp4
+- **FRAME_RATE**: 30
+- **RECORDING_BUFFER**: 16k
 
 ## Troubleshoot?
 
