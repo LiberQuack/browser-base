@@ -10,7 +10,7 @@ EXPOSE 5900
 WORKDIR /data
 
 RUN apt-get -y update && \
-    apt-get -y install xvfb fluxbox ffmpeg x11vnc && \
+    apt-get -y install xvfb fluxbox ffmpeg x11vnc busybox && \
     rm -rf /var/lib/apt/lists/* && \
     chown -R :users /data
 

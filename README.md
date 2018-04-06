@@ -10,8 +10,9 @@ Base image for containerized browsers
 
 - Xvfb (X virtual frame buffer)
 - Fluxbox (Desktop environment)
-- ffmpeg (Codec/Video Recorder)
 - X11vnc (Remote Connection)
+- busybox (Utilities)
+- ffmpeg (Codec/Video Recorder)
 
 ## How to use it
 
@@ -42,5 +43,6 @@ If you find yourself in trouble... It's possible to see logs in
 
 ## Changelog
 
+v1.2.0 Add busybox
 v1.1.0 Add environemnt variable for exit timeout
-v1.0.0 Fixes record code
+v1.0.0 Fixe record code
