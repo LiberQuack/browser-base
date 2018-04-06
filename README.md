@@ -28,7 +28,8 @@ vary for images extending this base)
 - **VIDEO_DIRECTORY**: /data
 - **VIDEO_EXTENSION**: mp4
 - **FRAME_RATE**: 30
-- **RECORDING_BUFFER**: 16k
+- **RECORDING_BUFFER**: 32k
+- **EXIT_TIMEOUT**: 10s 
 
 ## Troubleshoot?
 
@@ -41,4 +42,5 @@ If you find yourself in trouble... It's possible to see logs in
 
 ## Changelog
 
+v1.1.0 Add environemnt variable for exit timeout
 v1.0.0 Fixes record code
