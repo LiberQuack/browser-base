@@ -38,3 +38,7 @@ If you find yourself in trouble... It's possible to see logs in
 - /tmp/fluxbox.log
 - /tmp/x11vnc.log
 - /tmp/ffmpeg.log
+
+## Changelog
+
+v1.0.0 Fixes record code
