@@ -43,6 +43,7 @@ If you find yourself in trouble... It's possible to see logs in
 
 ## Changelog
 
+v1.2.1 Fix container shutdown
 v1.2.0 Add busybox
 v1.1.0 Add environemnt variable for exit timeout
 v1.0.0 Fixe record code
