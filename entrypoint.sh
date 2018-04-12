@@ -18,9 +18,9 @@ export SHUTDOWN_RUNNING='no'
 finishRecording() {
     echo 'Shutting down gracefully'
     printf "q\n" > /tmp/input-ffmpeg &
-    timeout $EXIT_TIMEOUT bash -c "while ! ps aux | grep -cP '\b$FFMPEG_PID\b .* ffmpeg' | grep 0 >& /dev/null; do sleep 1; echo Screen record finishing...; done" &&
-    { echo "Screen record finished"; } ||
-    { echo "Screen record corrupted - Timeout of ${EXIT_TIMEOUT} reached or forced"; }
+    timeout $EXIT_TIMEOUT bash -c "while ! ps aux | grep -cP '\b`cat /tmp/pid_ffmpeg`\b .* ffmpeg' | grep 0 >& /dev/null; do sleep 1; echo Screen record finishing...; done" &&
+    { echo "Screen record finished"; exit 0; } ||
+    { echo "Screen record corrupted - Timeout of ${EXIT_TIMEOUT} reached or forced"; exit 1; }
 }
 
 # Start Recording
@@ -29,8 +29,13 @@ Xvfb $DISPLAY -ac -screen 0 ${RESOLUTION}x24 >& /tmp/Xvfb.log & sleep 1
 fluxbox >& /tmp/fluxbox.log &
 x11vnc >& /tmp/x11vnc.log &
 ffmpeg -f x11grab -video_size $RESOLUTION -i $DISPLAY -bufsize $RECORDING_BUFFER -codec:v libx264 -r $FRAME_RATE -y $VIDEO_PATH < <(tail -f /tmp/input-ffmpeg) >& /tmp/ffmpeg.log &
-export FFMPEG_PID=$!
+echo $! > /tmp/pid_ffmpeg
 
 echo "Screen record being saved: ${VIDEO_PATH}"
 
-"$@"
+if [[ "$@" == 'bash' || "$@" == 'sh' ]]; then
+    "$@"
+else
+    "$@" &
+    wait
+fi

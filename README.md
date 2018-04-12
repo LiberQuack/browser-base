@@ -32,6 +32,10 @@ vary for images extending this base)
 - **RECORDING_BUFFER**: 32k
 - **EXIT_TIMEOUT**: 10s 
 
+## Notes
+
+Command other than `bash` and `shell` won't run interactively
+
 ## Troubleshoot?
 
 If you find yourself in trouble... It's possible to see logs in
@@ -43,6 +47,7 @@ If you find yourself in trouble... It's possible to see logs in
 
 ## Changelog
 
+v1.2.2 Fix container shutdown
 v1.2.1 Fix container shutdown
 v1.2.0 Add busybox
 v1.1.0 Add environemnt variable for exit timeout
